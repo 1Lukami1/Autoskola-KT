@@ -1,1 +1,1 @@
-# Auto-kola-KT
+# Autoškola KT
