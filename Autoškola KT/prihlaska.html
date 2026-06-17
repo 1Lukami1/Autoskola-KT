@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Přihláška — Autoškola KT</title>
+  <meta name="description" content="Online přihláška do Autoškoly KT. Vyplňte formulář a my se vám ozveme s termíny výcviku skupin AM, A1, A2, A nebo B." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+    <header class="site-header">
+    <div class="container header-inner">
+      <button class="nav-toggle" aria-label="Otevřít menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <nav class="nav">
+        <a href="index.html">Úvod</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="cenik.html">Ceník</a>
+        <a href="vozidla.html">Obrázky</a>
+        <a href="https://etesty2.mdcr.cz/" target="_blank" rel="noopener">Procvičování testů ↗</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a class="btn btn-primary is-cta" href="prihlaska.html">Přihláška</a>
+      </nav>
+      <a class="logo" href="index.html" aria-label="Autoškola KT — domů"><img src="assets/img/logo-akt.jpg" alt="Autoškola KT" class="logo-img" /></a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Úvod</a> / Přihláška</div>
+      <span class="eyebrow">Přihlaste se online</span>
+      <h1>Přihláška do autoškoly</h1>
+      <p>Vyplňte formulář a my se vám co nejdříve ozveme s nejbližšími termíny. Pole označená <span style="color:#fff">*</span> jsou povinná.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:900px">
+      <div class="form-card reveal">
+        <div id="form-status" class="form-status"></div>
+
+        <!-- POZOR (pro provozovatele): chcete-li, aby se přihláška odesílala přímo do e-mailu
+             bez otevírání poštovního programu, zaregistrujte se zdarma na https://formspree.io,
+             vytvořte formulář na e-mail autoskolakt@volny.cz a vložený kód vložte níže místo
+             "VAS_KOD" do atributu data-formspree. Do té doby formulář otevře e-mailový program
+             návštěvníka s předvyplněnou zprávou. -->
+        <form id="prihlaska-form" data-formspree="https://formspree.io/f/VAS_KOD" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="jmeno">Jméno <span class="req">*</span></label>
+              <input type="text" id="jmeno" name="jmeno" required autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="prijmeni">Příjmení <span class="req">*</span></label>
+              <input type="text" id="prijmeni" name="prijmeni" required autocomplete="family-name" />
+            </div>
+            <div class="field">
+              <label for="telefon">Telefon <span class="req">*</span></label>
+              <input type="tel" id="telefon" name="telefon" required autocomplete="tel" placeholder="+420 ..." />
+            </div>
+            <div class="field">
+              <label for="email">E-mail <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="narozeni">Datum narození</label>
+              <input type="date" id="narozeni" name="datum_narozeni" />
+            </div>
+            <div class="field">
+              <label for="skupina">Skupina <span class="req">*</span></label>
+              <select id="skupina" name="skupina" required>
+                <option value="" selected disabled>Vyberte skupinu…</option>
+                <option value="AM">AM — moped do 45 km/h</option>
+                <option value="A1">A1 — motocykl do 125 cm³</option>
+                <option value="A2">A2 — motocykl do 35 kW</option>
+                <option value="A">A — motocykl nad 35 kW</option>
+                <option value="B">B — osobní automobil</option>
+                <option value="A2+B">A2 + B — motocykl a automobil</option>
+                <option value="Kondiční jízdy">Kondiční jízdy</option>
+                <option value="Nevím / poradíte mi">Nevím, poradíte mi</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pobocka">Provozovna <span class="req">*</span></label>
+              <select id="pobocka" name="pobocka" required>
+                <option value="" selected disabled>Vyberte provozovnu…</option>
+                <option value="Praha 10">Praha 10 — Chrpová 2253/1</option>
+                <option value="Prachatice">Prachatice — areál MS Kart</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="adresa">Adresa bydliště</label>
+              <input type="text" id="adresa" name="adresa" autocomplete="street-address" placeholder="Ulice, č.p., město, PSČ" />
+            </div>
+            <div class="field full">
+              <label for="poznamka">Poznámka / dotaz</label>
+              <textarea id="poznamka" name="poznamka" placeholder="Napište nám cokoliv — preferované termíny, dotazy ke splátkám apod."></textarea>
+            </div>
+            <div class="field full">
+              <label class="consent">
+                <input type="checkbox" name="souhlas" required />
+                <span>Souhlasím se zpracováním uvedených osobních údajů za účelem vyřízení mé přihlášky a kontaktování autoškolou. <span class="req">*</span></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- anti-spam honeypot -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+
+          <div style="margin-top:26px; display:flex; flex-wrap:wrap; gap:14px; align-items:center">
+            <button type="submit" class="btn btn-primary btn-lg">Odeslat přihlášku</button>
+            <a class="btn btn-outline btn-lg" href="tel:+420604830176">Raději zavolám: 604 830 176</a>
+          </div>
+          <p class="form-note">Po odeslání vás budeme kontaktovat na uvedený telefon nebo e-mail. Vaše údaje použijeme pouze pro vyřízení přihlášky.</p>
+        </form>
+      </div>
+
+      <div class="note-grid" style="margin-top:30px">
+        <div class="note"><b>Nevíte si rady s výběrem?</b> Zavolejte na <a href="tel:+420604830176">604 830 176</a> nebo napište na <a href="mailto:autoskolakt@volny.cz">autoskolakt@volny.cz</a>.</div>
+        <div class="note"><b>Splátky bez navýšení</b> a zahájení výcviku i před dovršením věku — rádi vše vysvětlíme osobně.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="logo" href="index.html">
+        <img src="assets/img/logo-akt.jpg" alt="Autoškola KT" class="logo-img" />
+      </a>
+          <p>Autoškola Kratochvíl — výcvik skupin AM, A1, A2, A a B. Individuální přístup, moderní trenažéry a férové ceny v Praze a Prachaticích.</p>
+        </div>
+        <div>
+          <h4>Navigace</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="sluzby.html">Služby</a></li>
+            <li><a href="cenik.html">Ceník</a></li>
+            <li><a href="vozidla.html">Obrázky</a></li>
+            <li><a href="prihlaska.html">Přihláška</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Pro žáky</h4>
+          <ul class="footer-links">
+            <li><a href="https://etesty2.mdcr.cz/" target="_blank" rel="noopener">Procvičování testů ↗</a></li>
+            <li><a href="cenik.html">Kondiční jízdy</a></li>
+            <li><a href="kontakt.html">Kontakt &amp; úřední hodiny</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer-links footer-contact">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+420604830176">604 830 176</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg><a href="mailto:autoskolakt@volny.cz">autoskolakt@volny.cz</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Chrpová 2253/1, Praha 10</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Autoškola KT (Kratochvíl). Všechna práva vyhrazena.</span>
+        <span>IČ a podrobnosti rádi sdělíme na vyžádání.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
