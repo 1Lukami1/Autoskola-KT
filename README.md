@@ -1,48 +1,45 @@
-# Autoškola KT
+# Autoškola KT — webové stránky
 
-Tohle jsou nové webové stránky autoškoly KT. Jsou moderní, laděné do červené podle loga
-a obsah (texty, ceny i fotky) vychází z původního webu autoškoly.
+Moderní statický web autoškoly (HTML + CSS + JavaScript, bez nutnosti instalace čehokoliv).
+Texty, ceny i fotky vycházejí z původního webu autoskolakt.cz, design je nový.
 
-## Jak si web otevřít
+## Jak si web zobrazit
 
-Otevřete úvodní stránku (soubor s názvem index) dvojklikem ve svém prohlížeči. Web funguje
-i bez internetu, není potřeba nic instalovat.
+Stačí dvojklikem otevřít soubor **`index.html`** v prohlížeči. Funguje offline.
 
-## Co web obsahuje
+## Stránky
 
-Web má šest stránek, mezi kterými se prokliká přes menu nahoře:
+| Soubor | Stránka |
+|--------|---------|
+| `index.html` | Úvod |
+| `sluzby.html` | Služby |
+| `cenik.html` | Ceník |
+| `vozidla.html` | Výcviková vozidla (galerie s filtrem a lightboxem) |
+| `prihlaska.html` | Přihláška (online formulář) |
+| `kontakt.html` | Kontakt (obě provozovny + mapa) |
 
-- Úvod — hlavní stránka s představením a fotkou výcvikového auta.
-- Služby — co autoškola nabízí (výcvik, kondiční jízdy, trenažéry, příprava na zkoušky).
-- Ceník — přehled cen pro všechny skupiny, rozšíření, kondiční jízdy i opravné zkoušky.
-- Obrázky — galerie fotek aut, motorek, trenažérů a zázemí; po kliknutí se fotka zvětší
-  a dají se filtrovat podle kategorie.
-- Přihláška — online formulář, kterým se zájemce přihlásí do kurzu.
-- Kontakt — obě provozovny (Praha a Prachatice), telefon, e-mail a mapa.
+Společné soubory: `assets/css/style.css` (vzhled), `assets/js/main.js` (interakce), `assets/img/` (fotky).
+Procvičování testů odkazuje na oficiální `etesty2.mdcr.cz`.
 
-Položka „Procvičování testů" v menu odkazuje na oficiální stránky ministerstva, kde si
-lze zdarma procvičovat zkušební testy.
+## Přihláškový formulář — jak ho zapnout
 
-## Přihláškový formulář
+Ve výchozím stavu formulář po odeslání **otevře e-mailový program** návštěvníka s předvyplněnou
+přihláškou na adresu `autoskolakt@volny.cz`. Funguje hned, bez nastavení.
 
-Když někdo vyplní a odešle přihlášku, ve výchozím nastavení se mu otevře jeho e-mailový
-program s už předvyplněnou zprávou na adresu autoškoly — stačí, aby ji odeslal. Funguje to
-hned, bez jakéhokoliv nastavování.
+Pokud chcete, aby přihlášky **chodily přímo do e-mailu** (bez otevírání pošty u návštěvníka):
 
-Pokud byste chtěli, aby přihlášky chodily rovnou do e-mailové schránky, aniž by návštěvník
-musel cokoliv odesílat ze svého e-mailu, jde to zařídit přes bezplatnou službu Formspree.
-Stačí se tam zaregistrovat, propojit s e-mailem autoškoly a podle jejich pokynů web jednou
-nastavit. Rád vám s tím pomůžu.
+1. Zaregistrujte se zdarma na <https://formspree.io>.
+2. Vytvořte nový formulář směřující na `autoskolakt@volny.cz`. Dostanete kód, např. `xayzbwqd`.
+3. V souboru `prihlaska.html` najděte řádek s `data-formspree="https://formspree.io/f/VAS_KOD"`
+   a nahraďte `VAS_KOD` svým kódem.
 
-## Jak web zveřejnit na internetu
+## Jak web vyvěsit na internet
 
-Stránky jdou nahrát na prakticky jakýkoliv český hosting, nebo zdarma na služby jako Netlify
-či GitHub Pages. V praxi se nahraje celá tato složka i s obrázky a web je online.
+Web je statický, takže ho lze nahrát na jakýkoliv hosting (Webnode, Wedos, Forpsi…),
+nebo zdarma na **Netlify** / **GitHub Pages** — stačí nahrát celou tuto složku.
 
-## Co je dobré ještě ohlídat
+## Co je potřeba ještě upravit / ověřit
 
-- Ceny odpovídají původnímu webu — před spuštěním je prosím překontrolujte, ať sedí.
-- V patičce je IČO uvedené jen obecně, případně ho doplňte.
-- Fotky jsou převzaté z původního webu; časem je lze nahradit kvalitnějšími.
-
-Pokud budete chtít cokoliv upravit (texty, ceny, fotky, barvy), ozvěte se — snadno to doladíme.
+- **Ceny** odpovídají původnímu webu k červnu 2026 — před ostrým spuštěním prosím překontrolujte.
+- **IČO** v patičce je uvedeno jen obecně („sdělíme na vyžádání"); doplňte dle potřeby.
+- Fotky jsou převzaté z původního webu; pro ostrý web doporučuji časem nahradit kvalitnějšími.
