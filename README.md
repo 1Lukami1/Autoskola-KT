@@ -1,4 +1,4 @@
-# Autoškola KT — webové stránky
+# Autoškola KT
 
 Tohle jsou nové webové stránky autoškoly KT. Jsou moderní, laděné do červené podle loga
 a obsah (texty, ceny i fotky) vychází z původního webu autoškoly.
